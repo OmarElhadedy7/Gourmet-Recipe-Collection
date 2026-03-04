@@ -1,0 +1,72 @@
+/* ============================================
+   Responsive Design - Restaurant Theme
+   ============================================ */
+
+/* Mobile screen */
+@media (max-width: 767px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+  
+  header p {
+    font-size: 0.8rem;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  #meals-wrapper h2 {
+    font-size: 1.5rem;
+  }
+  
+  .btn-lg {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+  
+  #mealsContainer .card-img-top {
+    height: 180px !important;
+  }
+  
+  #mealsContainer .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Small screen 768px : 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  #mealsContainer .card-img-top {
+    height: 220px;
+  }
+}
+
+/* Medium screen 992px : 1199px */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Large screen 1200px+ */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  #meals-wrapper h2 {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,593 @@
+/* ============================================
+   Restaurant Theme - Fancy Design
+   ============================================ */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Restaurant Color Palette */
+  --restaurant-burgundy: #8B2635;
+  --restaurant-gold: #D4AF37;
+  --restaurant-cream: #F5F1E8;
+  --restaurant-dark: #2C1810;
+  --restaurant-brown: #6B4423;
+  --restaurant-light-gold: #F4E4BC;
+  --restaurant-shadow: rgba(139, 38, 53, 0.3);
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--restaurant-cream) 0%, #E8E0D0 100%);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--restaurant-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   Loader Screen
+   ============================================ */
+
+.loader-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--restaurant-burgundy) 0%, var(--restaurant-brown) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader-screen .spinner-border {
+  width: 4rem;
+  height: 4rem;
+  border-width: 0.5rem;
+  color: var(--restaurant-gold);
+}
+
+.loader-screen p {
+  color: var(--restaurant-cream);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+/* ============================================
+   Header - Restaurant Style
+   ============================================ */
+
+header {
+  background: linear-gradient(135deg, var(--restaurant-burgundy) 0%, #6B1F2A 100%);
+  box-shadow: 0 4px 20px var(--restaurant-shadow);
+  border-bottom: 3px solid var(--restaurant-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(212, 175, 55, 0.1) 10px,
+    rgba(212, 175, 55, 0.1) 20px
+  );
+  pointer-events: none;
+}
+
+header h1 {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+header .btn-light {
+  background: var(--restaurant-gold);
+  border: 2px solid var(--restaurant-light-gold);
+  color: var(--restaurant-dark);
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+header .btn-light:hover {
+  background: var(--restaurant-light-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* ============================================
+   Search Section - Elegant Card
+   ============================================ */
+
+.card {
+  background: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(139, 38, 53, 0.15);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--restaurant-burgundy), var(--restaurant-gold), var(--restaurant-burgundy));
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(139, 38, 53, 0.25);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-title {
+  color: var(--restaurant-burgundy);
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--restaurant-gold), transparent);
+}
+
+/* ============================================
+   Form Elements - Restaurant Style
+   ============================================ */
+
+.form-control,
+.form-select {
+  border: 2px solid #E0D5C7;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--restaurant-gold);
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* ============================================
+   Buttons - Fancy Restaurant Style
+   ============================================ */
+
+.btn {
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--restaurant-burgundy) 0%, #6B1F2A 100%);
+  color: white;
+  box-shadow: 0 4px 15px var(--restaurant-shadow);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--restaurant-shadow);
+  background: linear-gradient(135deg, #6B1F2A 0%, var(--restaurant-burgundy) 100%);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--restaurant-brown) 0%, #5A3820 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(107, 68, 35, 0.3);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 68, 35, 0.4);
+  background: linear-gradient(135deg, #5A3820 0%, var(--restaurant-brown) 100%);
+}
+
+.btn-lg {
+  padding: 15px 20px;
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   Meal Cards - Restaurant Menu Style
+   ============================================ */
+
+#mealsContainer .card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+}
+
+#mealsContainer .card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(139, 38, 53, 0) 0%, rgba(139, 38, 53, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+#mealsContainer .card:hover::after {
+  opacity: 1;
+}
+
+#mealsContainer .card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(139, 38, 53, 0.3);
+}
+
+#mealsContainer .card-img-top {
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  border-radius: 0;
+}
+
+#mealsContainer .card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+#mealsContainer .card-body {
+  padding: 1.5rem;
+  background: white;
+}
+#mealsContainer .card-text{
+  color:#962d3c ;
+}
+#mealsContainer .card-title {
+  color: var(--restaurant-burgundy);
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  padding-bottom: 0;
+}
+
+#mealsContainer .card-title::after {
+  display: none;
+}
+
+#mealsContainer  {
+  color: var(--restaurant-brown);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+#mealsContainer .btn-primary {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* ============================================
+   Section Headings
+   ============================================ */
+
+#meals-wrapper h2 {
+  color: var(--restaurant-burgundy);
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+#meals-wrapper h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--restaurant-gold), transparent);
+}
+
+/* ============================================
+   Load More Button
+   ============================================ */
+
+#loadMoreBtn {
+  background: linear-gradient(135deg, var(--restaurant-gold) 0%, var(--restaurant-light-gold) 100%);
+  color: var(--restaurant-dark);
+  border: 2px solid var(--restaurant-gold);
+  font-weight: bold;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+#loadMoreBtn:hover {
+  background: linear-gradient(135deg, var(--restaurant-light-gold) 0%, var(--restaurant-gold) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+#loadMoreBtn:disabled {
+  cursor: not-allowed;
+}
+/* ============================================
+   Footer - Restaurant Style
+   ============================================ */
+
+footer {
+  background: linear-gradient(135deg, var(--restaurant-dark) 0%, var(--restaurant-brown) 100%);
+  color: var(--restaurant-cream);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  border-top: 3px solid var(--restaurant-gold);
+}
+
+footer a {
+  color: var(--restaurant-gold);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--restaurant-light-gold);
+  text-decoration: underline;
+}
+
+/* ============================================
+   Meal Details Page
+   ============================================ */
+
+#mealDetailsPage {
+  background: linear-gradient(135deg, var(--restaurant-cream) 0%, #E8E0D0 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+#mealDetailsContent h2 {
+  color: var(--restaurant-burgundy);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#mealDetailsContent h3 {
+  color: var(--restaurant-brown);
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--restaurant-gold);
+}
+
+#mealDetailsContent img {
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(139, 38, 53, 0.2);
+  border: 3px solid var(--restaurant-gold);
+}
+
+.list-group-item {
+  background: white;
+  border: 1px solid #E0D5C7;
+  border-left: 4px solid var(--restaurant-gold);
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+  background: var(--restaurant-light-gold);
+  transform: translateX(5px);
+  box-shadow: 0 2px 10px rgba(139, 38, 53, 0.1);
+}
+
+/* ============================================
+   Dark Mode - Restaurant Theme
+   ============================================ */
+
+
+body.dark-mode .card { 
+    background: #1c1c1c; 
+    color: #e0e0e0;
+    border-color: #333; 
+}
+
+
+body.dark-mode #mealDetailsPage { 
+  
+  
+    background: #1a1a1a; 
+}
+.card-text  #mealDetailsPage{
+  color:#ffffff ;
+}
+
+.dark-mode {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #e0e0e0;
+}
+
+.dark-mode .loader-screen {
+  background: linear-gradient(135deg, var(--restaurant-dark) 0%, var(--restaurant-brown) 100%);
+}
+
+.dark-mode .card {
+  background: #2d2d2d;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+.dark-mode .card-body {
+  background: #2d2d2d;
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+  background-color: #2d2d2d;
+  border-color: #555;
+  color: #e0e0e0;
+}
+
+.dark-mode .form-control:focus,
+.dark-mode .form-select:focus {
+  border-color: var(--restaurant-gold);
+  background-color: #2d2d2d;
+}
+
+.dark-mode .list-group-item {
+  background-color: #2d2d2d;
+  border-color: #555;
+  color: #e0e0e0;
+}
+
+.dark-mode .list-group-item:hover {
+  background: #3d3d3d;
+}
+
+.dark-mode footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.dark-mode #mealsContainer .card-body {
+  background: #2d2d2d;
+}
+
+.dark-mode #mealsContainer .card-title {
+  color: var(--restaurant-light-gold);
+}
+
+.dark-mode #meals-wrapper h2 {
+  color: var(--restaurant-light-gold);
+}
+
+.dark-mode #mealDetailsContent h2 {
+  color: var(--restaurant-light-gold);
+}
+
+.dark-mode #mealDetailsContent h3 {
+  color: var(--restaurant-gold);
+  border-bottom-color: var(--restaurant-gold);
+}
+
+
+
+
+
+.favorite-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    -webkit-text-stroke: 1px black;
+    z-index: 2; 
+}
+
+
+.favorite-icon:hover {
+    transform: scale(1.2);
+}
+
+.favorite-icon.active {
+    color: #ff4757; /* لون أحمر عند التفعيل */
+    -webkit-text-stroke: 1px #c0392b;
+ 
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  #meals-wrapper h2 {
+    font-size: 1.5rem;
+  }
+  
+  .btn-lg {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+  
+  #mealsContainer .card-img-top {
+    height: 200px !important;
+  }
+}
